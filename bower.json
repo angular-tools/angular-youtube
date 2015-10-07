@@ -1,0 +1,22 @@
+{
+  "name": "angular-youtube",
+    "authors": [
+    "minutephp <dev@minutephp.com>"
+  ],
+  "description": "Plays youtube video using AngularJS",
+  "main": "src/js/angular-youtube.js",
+  "keywords": [
+    "angularjs",
+    "audio",
+    "player"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.minutephp.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
