@@ -17,6 +17,8 @@
             };
 
             ytService.popup = function (id, options) {
+                options = options || {autoplay: true, hd: true};
+
                 var embedCode = ytService.getEmbedCode(id, options);
                 var html = options.title ? '<h3 class="title">' + options.title + '</h3>' + embedCode : embedCode;
 
