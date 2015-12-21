@@ -40,6 +40,26 @@
                     element.html($youtube.getEmbedCode($scope.id, $scope.options));
                 }
             }
+        }])
+        .directive('youtubeLink', ['$youtube', function ($youtube) {
+            return {
+                restrict: 'A',
+                replace: true,
+                scope: {id: '@', options: '='},
+                link: function ($scope, element, attrs) {
+                    element.click(function () {
+                        if (!$scope.id && element.attr('href')) {
+                            var url = element.attr('href');
+                            var matches = url.match(/youtube\.com.*((?:\?|\&)v=|\/embed\/)(.{11})/);
+                            $scope.id = matches.pop(0) || url;
+                        }
+
+                        $youtube.popup($scope.id, $scope.options);
+
+                        return false;
+                    })
+                }
+            }
         }]);
 })();
 
